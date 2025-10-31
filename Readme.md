@@ -92,7 +92,7 @@ public:
     Product* createProduct() override { return new ConcreteProductA(); }
 };
 
-
+```
 Use When:
 
 The creation logic must vary depending on the subclass.
@@ -106,6 +106,7 @@ Building a house — first walls, then roof, then finishing touches.
 
 C++ Example:
 
+```cpp
 class House {
 public:
     string walls, roof;
@@ -127,7 +128,7 @@ public:
     House* getHouse() override { return house; }
 };
 
-
+```
 Use When:
 
 Constructing objects with many optional parts (e.g., report generators, UI builders).
@@ -140,7 +141,7 @@ Analogy:
 Duplicating a document rather than writing it again.
 
 C++ Example:
-
+```cpp
 class Shape {
 public:
     virtual Shape* clone() = 0;
@@ -151,7 +152,7 @@ public:
     Circle* clone() override { return new Circle(*this); }
 };
 
-
+```
 Use When:
 
 Object creation is costly or complex.
@@ -178,7 +179,7 @@ Analogy:
 A travel adapter connects a European plug to a US socket.
 
 C++ Example:
-
+```cpp
 class OldPrinter { public: void printOld() { cout << "Old printer\n"; } };
 class Printer { public: virtual void print() = 0; };
 
@@ -188,7 +189,7 @@ public:
     Adapter(OldPrinter* o): old(o) {}
     void print() override { old->printOld(); }
 };
-
+```
 
 Use When:
 
@@ -202,7 +203,7 @@ Analogy:
 A remote control works for different devices (TV, Radio).
 
 C++ Example:
-
+```cpp
 class Device { public: virtual void turnOn()=0; };
 class TV : public Device { public: void turnOn(){ cout<<"TV on\n"; } };
 
@@ -213,7 +214,7 @@ public:
     Remote(Device* d): device(d) {}
     void pressOn() { device->turnOn(); }
 };
-
+```
 
 Use When:
 
@@ -227,7 +228,7 @@ Analogy:
 A folder can contain files and other folders.
 
 C++ Example:
-
+```cpp
 class FileSystemItem {
 public:
     virtual void showDetails() = 0;
@@ -251,7 +252,7 @@ public:
         for(auto c: children) c->showDetails();
     }
 };
-
+```
 
 Use When:
 
@@ -276,7 +277,7 @@ Analogy:
 A receptionist controls who can meet the CEO.
 
 C++ Example:
-
+```cpp
 class Image { public: virtual void display()=0; };
 
 class RealImage : public Image {
@@ -295,7 +296,7 @@ public:
         real->display();
     }
 };
-
+```
 
 Use When:
 
@@ -354,7 +355,7 @@ Analogy:
 Undo feature in a text editor.
 
 C++ Example:
-
+```cpp
 class Memento {
     string state;
 public:
@@ -370,7 +371,7 @@ public:
     void restore(Memento m){ content = m.getState(); }
     void show(){ cout << content << endl; }
 };
-
+```
 
 Use When:
 
