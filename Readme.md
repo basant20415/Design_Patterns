@@ -17,9 +17,8 @@ Why Use Design Patterns?
 
 ✅ Provide a shared vocabulary for developers
 
-## ⚙️ Types of Design Patterns
+<img width="812" height="309" alt="image" src="https://github.com/user-attachments/assets/655cdf01-0697-4596-ae39-2f618d2b5bac" />
 
-![alt text](image.png)
 
 ## 🏗️ Creational Patterns
 ### 1. Singleton Pattern
